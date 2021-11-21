@@ -27,7 +27,9 @@ Z = Math.floor(Math.floor(opponent yield * opponent level / 5) * 1.5);
 ```
 The `1.5` in `Z` comes from the fact that all fights (minus the Kyurem one) in this tool are Trainer fights.
 
-Any Double fight will award you with only half of the experience. Any _potential_ Double battle is assumed to be a Single battle with each trainer due to it being more optimal experience-wise. Triple and Rotation battles are marked with two asterisks (**) and those award only 1/3 of the usual experience. The tool tries to emulate all of those fights' behavior as well. Kyurem awards 1.5x less experience due to it not being a trainer fight.
+Any Double fight will award you with only half of the experience. Any _potential_ Double battle is assumed to be a Single battle with each trainer due to it being more optimal experience-wise. Triple and Rotation battles are marked with two asterisks (\*\*) and those award only 1/3 of the usual experience. The tool tries to emulate all of those fights' behavior as well. Kyurem awards 1.5x less experience due to it not being a trainer fight.
+
+KOed Pokemon that appear on Route 7 and later award 1.5x more experience due to Lucky Egg.
 
 There are some limitations with the formula above, as explained below. Due to this, it's important to be cautious with any result you receive from the tool.
 
