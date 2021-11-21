@@ -62,7 +62,6 @@ calculate.addEventListener('click', function() {
     spe = 0;
     exp = 0;
     trade = tradeCheckbox.checked ? 1.5 : 1;
-    console.log(trade);
 
     level = Number(startLevel.value);
     fastLevel = level;
@@ -133,7 +132,7 @@ calculate.addEventListener('click', function() {
                 spe = 252;
             }
 
-            if (item.parentNode.parentNode.parentNode.parentNode.className === 'luckyegg') {
+            if (item.parentNode.parentNode.parentNode.parentNode.parentNode.className === 'luckyegg') {
                 luckyegg = 1.5;
             }
 
@@ -199,7 +198,6 @@ calculate.addEventListener('click', function() {
             
         });
     }
-    console.log(erraticExp, fastLevel, medSlowLevel, medFastLevel, slowLevel, erraticLevel, fluctuatingLevel);
     evs_result.innerHTML = `<p>Your Pokemon would have the following EVs:</p>
 <ul>
     <li><strong>HP:</strong> ${hp}</li>
