@@ -34,7 +34,7 @@ There are some limitations with the formula above, as explained below. Due to th
 ## Warnings and limitations
 Due to rounding issues, the tool may produce results that are off by one experience point for any Double, Triple, Rotation, or Kyurem fight. This generally only becomes an issue if that result either produces a premature level up or does not cause a level up that would have happened otherwise at any point.
 
-When you "KO" more than one Pokemon, the tool assumes that you are KOing all of your Pokemon in the exact order they appear on the web page. For example, if you want to KO all of Clay and the Route 6's Pokemon, the tool will assume that you KOed the Breeder's Pokemon first, then Krokorok, then Sandslash, then Excadrill. This means that the actual experience may be different from the tool's if those Pokemon are not KOed in that order and you get a level up before facing the last of those.
+When you "KO" more than one Pokemon, the tool assumes that you are KOing all of your Pokemon in the exact order they appear on the web page. For example, if you want to KO all of Clay and the Route 6 Breeder's Pokemon, the tool will assume that you KOed the Breeder's Pokemon first, then Krokorok, then Sandslash, then Excadrill. This means that the actual experience may be different from the tool's if those Pokemon are not KOed in that order and you get a level up before facing the last of those.
 
 The tool does not check for 510 EVs, since this is not realistic to achieve in an efficient run. The tool does check if a stat has more than 252 EVs, though.
 
