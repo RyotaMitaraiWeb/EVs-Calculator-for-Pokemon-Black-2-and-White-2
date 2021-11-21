@@ -1,0 +1,227 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+h1 .author {
+  display: block;
+  font-style: italic;
+  font-size: 1.2rem;
+  font-weight: normal;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+nav {
+  background: black;
+  color: white;
+  max-width: 100%;
+  margin: 0;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  height: 60px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+@media only screen and (max-width: 874px) {
+  nav {
+    overflow: visible;
+    height: 100px;
+    line-height: 45px;
+    font-size: 0.9rem;
+  }
+}
+nav ul {
+  list-style: none;
+  font-family: Tahoma, sans-serif;
+  width: 100%;
+  padding-left: 0;
+}
+nav ul li {
+  display: inline-block;
+  padding: 0;
+  vertical-align: middle;
+  text-align: left;
+}
+nav ul li > * {
+  vertical-align: middle;
+}
+nav ul li a {
+  white-space: nowrap;
+}
+nav ul li input[type=number] {
+  width: 5%;
+}
+nav ul li input[type=checkbox] {
+  height: 25px;
+  width: 25px;
+  background-color: black;
+  max-width: 100%;
+  max-height: 100%;
+  margin-right: 0;
+  margin-left: 4px;
+}
+nav ul li label, nav ul li input[type=checkbox] {
+  cursor: pointer;
+}
+nav ul li label[for], nav ul li select, nav ul li input {
+  margin-right: 6px;
+}
+nav ul li #calculate {
+  border: 1px solid #008f15;
+  padding: 8px;
+  border-radius: 5px;
+  background: #00e65c;
+  color: black;
+  transition: background-color 0.3s;
+  margin-left: 12px;
+}
+nav ul li #calculate:hover {
+  background: #00943b;
+}
+nav ul li #calculate:active {
+  color: #4dccff;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+form {
+  font-family: Arial, Helvetica, sans-serif;
+}
+form fieldset {
+  overflow: auto;
+  margin-bottom: 1.2em;
+}
+form fieldset legend {
+  font-weight: bold;
+  color: #6e8087;
+  font-size: 1.5rem;
+}
+@media only screen and (max-width: 971px) {
+  form fieldset legend {
+    text-align: center;
+  }
+}
+form .group h2 {
+  display: inline-block;
+  font-size: 1rem;
+}
+@media only screen and (max-width: 971px) {
+  form .group h2 {
+    display: block;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 971px) {
+  form .group .pokemon {
+    display: grid;
+    place-content: center;
+    grid-auto-flow: column;
+    place-items: center;
+    gap: 5px;
+  }
+  form .group .pokemon label, form .group .pokemon input {
+    margin-bottom: 5px;
+  }
+}
+form .group label {
+  margin-right: 8px;
+}
+@media only screen and (max-width: 971px) {
+  form .group label::after {
+    content: "\a";
+    white-space: pre;
+  }
+}
+form .group input[type=checkbox] {
+  margin-left: 5px;
+}
+@media only screen and (max-width: 971px) {
+  form .group input[type=checkbox] {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+form .group label, form .group input {
+  vertical-align: middle;
+  cursor: pointer;
+}
+@media only screen and (max-width: 971px) {
+  form .buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 5px;
+  }
+}
+form [data-action] {
+  background: #00e65c;
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, opacity 0.3s;
+}
+form [data-action]:hover {
+  background: #00943b;
+}
+form [data-action]:active {
+  color: #4dccff;
+}
+form input[type=reset] {
+  background: #e60000;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, opacity 0.3s;
+}
+form input[type=reset]:hover {
+  background: #940000;
+}
+form input[type=reset]:active {
+  color: #ab5cff;
+}
+form input[data-version] {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  transition: background-color 0.3s, opacity 0.3s;
+}
+form input[data-version=b2] {
+  color: white;
+  background: black;
+}
+form input[data-version=b2]:hover {
+  opacity: 0.7;
+}
+form input[data-version=b2]:active {
+  color: #ffd500;
+}
+form input[data-version=w2] {
+  color: black;
+  background: #e8e8e8;
+}
+form input[data-version=w2]:hover {
+  background: #c9c9c9;
+}
+form input[data-version=w2]:active {
+  color: #e600ff;
+}
+
+/*# sourceMappingURL=styles.css.map */
