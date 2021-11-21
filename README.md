@@ -1,6 +1,6 @@
 # EVs calculator for Pokemon Black 2 and White 2
 
-A tool to help you get results without having to fight all the trainers. [Link to tool]()
+A tool to help you get results without having to fight all the trainers. [Link to tool](https://ryotamitaraiweb.github.io/EVs-Calculator-for-Pokemon-Black-2-and-White-2/)
 
 ## How to use
 
