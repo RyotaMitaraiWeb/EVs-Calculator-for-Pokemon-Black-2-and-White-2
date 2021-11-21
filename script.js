@@ -10,7 +10,6 @@ const select = document.querySelector('#starter');
 const versionCheck = document.querySelectorAll('input[type="button"][data-version]');
 const tradeCheckbox = document.querySelector('#trade');
 let checkboxes = [];
-// const w2Check = document.querySelectorAll('input[type="button"][data-version]');
 
 /* Input data */
 let pokemon = '';
@@ -140,8 +139,6 @@ calculate.addEventListener('click', function() {
 
             fastExp += Math.floor(Math.floor(Math.ceil(gainExp(expYield, fastLevel, opponentLevel) / split) * trade) * luckyegg);
             if (fastExp >= fastGrowth(fastLevel + 1)) {
-                // let remainder = Math.floor(fastExp / fastGrowth(fastLevel));
-                // fastLevel += remainder;
                 let start = fastGrowth(fastLevel);
                 for (let i = start; i <= fastExp; i++) {
                     if (i === fastGrowth(fastLevel + 1)) {
@@ -152,8 +149,6 @@ calculate.addEventListener('click', function() {
             
             medSlowExp += Math.floor(Math.floor(Math.ceil(gainExp(expYield, medSlowLevel, opponentLevel) / split) * trade) * luckyegg);
             if (medSlowExp >= medSlowGrowth(medSlowLevel + 1)) {
-                // let remainder = Math.floor(medSlowExp / medSlowGrowth(medSlowLevel));
-                // medSlowLevel += remainder
                 let start = medSlowGrowth(medSlowLevel);
                 for (let i = start; i <= medSlowExp; i++) {
                     if (i === medSlowGrowth(medSlowLevel + 1)) {
@@ -164,8 +159,6 @@ calculate.addEventListener('click', function() {
 
             medFastExp += Math.floor(Math.floor(Math.ceil(gainExp(expYield, medFastLevel, opponentLevel) / split) * trade) * luckyegg);
             if (medFastExp >= medFastGrowth(medFastLevel + 1)) {
-                // let remainder = Math.floor(medFastExp / medFastGrowth(medFastLevel));
-                // medFastLevel += remainder
                 let start = medFastGrowth(medFastLevel);
                 for (let i = start; i <= medFastExp; i++) {
                     if (i === medFastGrowth(medFastLevel + 1)) {
@@ -176,8 +169,6 @@ calculate.addEventListener('click', function() {
 
             slowExp += Math.floor(Math.floor(Math.ceil(gainExp(expYield, slowLevel, opponentLevel) / split) * trade) * luckyegg);
             if (slowExp >= slowGrowth(slowLevel + 1)) {
-                // let remainder = Math.floor(slowExp / slowGrowth(slowLevel));
-                // slowLevel += remainder
                 let start = slowGrowth(slowLevel);
                 for (let i = start; i <= slowExp; i++) {
                     if (i === slowGrowth(slowLevel + 1)) {
@@ -188,8 +179,6 @@ calculate.addEventListener('click', function() {
 
             erraticExp += Math.floor(Math.floor(Math.ceil(gainExp(expYield, erraticLevel, opponentLevel) / split) * trade) * luckyegg);
             if (erraticExp >= erraticGrowth(erraticLevel + 1)) {
-                // let remainder = Math.floor(erraticExp / erraticGrowth(erraticLevel));
-                // erraticLevel += remainder
                 let start = erraticGrowth(erraticLevel);
                 for (let i = start; i <= erraticExp; i++) {
                     if (i === erraticGrowth(erraticLevel + 1)) {
@@ -200,9 +189,6 @@ calculate.addEventListener('click', function() {
 
             fluctuatingExp += Math.floor(Math.floor(Math.ceil(gainExp(expYield, fluctuatingLevel, opponentLevel) / split) * trade) * luckyegg);
             if (fluctuatingExp >= fluctuatingGrowth(fluctuatingLevel + 1)) {
-                // let remainder = /*Math.floor*/(fluctuatingExp / fluctuatingGrowth(fluctuatingLevel));
-                // console.log(remainder);
-                // fluctuatingLevel += remainder
                 let start = fluctuatingGrowth(fluctuatingLevel);
                 for (let i = start; i <= fluctuatingExp; i++) {
                     if (i === fluctuatingGrowth(fluctuatingLevel + 1)) {
@@ -237,7 +223,7 @@ calculate.addEventListener('click', function() {
 
 checkAll.forEach(btn => {
     btn.addEventListener('click', function() {
-        let group = this.parentNode.querySelectorAll('div.group');
+        let group = this.parentNode.parentNode.querySelectorAll('div.group');
         group.forEach(child => {
             let checkboxes = child.querySelectorAll('input[type="checkbox"');
             checkboxes.forEach(checkbox => {
@@ -250,7 +236,7 @@ checkAll.forEach(btn => {
 versionCheck.forEach(btn => {
     btn.addEventListener('click', function() {
         let version = this.dataset.version;
-        let group = this.parentNode.querySelectorAll('div.group');
+        let group = this.parentNode.parentNode.querySelectorAll('div.group');
         group.forEach(item => {
             if (item.dataset.version.includes(version)) {
                 item.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
@@ -266,21 +252,8 @@ select.addEventListener('change', function(e) {
     let starter = e.target.value;
     let strongerStarter = starter === 'snivy' ? ['tepig', 'emboar'] : starter === 'tepig' ? ['oshawott', 'samurott'] : ['snivy', 'serperior'];
     let hugh = document.querySelectorAll('.starter');
-    // if (starter === 'snivy') {
-    //     // document.querySelector('.starter').dataset.pokemon = 'tepig';
-    //     // document.querySelector('.starter').nextElementSibling.textContent = document.querySelector('.starter').nextElementSibling.textContent.replace(/.*? (?=Lvl.)/, 'Tepig'); 
-    //     hugh.forEach(input => {
-    //         input.dataset.pokemon = 'tepig';
-    //         input.nextElementSibling.textContent = input.nextElementSibling.textContent.replace(/[a-zA-Z]+(?= \(lv.)/, 'Tepig');
-    //     });
-    // }
-    // console.log(strongerStarter);
-    // hugh.forEach(input => {
-    //     input.dataset.pokemon = strongerStarter;
-    //     input.nextElementSibling.textContent = input.nextElementSibling.textContent.replace(/[A-Za-z]+(?= \(lv\.)/, strongerStarter[0].toLocaleUpperCase() + strongerStarter.slice(1));
-    // });
     hugh.forEach(input => {
-        let stage = Number(input.parentNode.dataset.stage);
+        let stage = Number(input.parentNode.parentNode.dataset.stage);
         input.dataset.pokemon = strongerStarter[stage];
         input.nextElementSibling.textContent = input.nextElementSibling.textContent.replace(/[A-Za-z]+(?= \(lv\.)/, strongerStarter[stage][0].toLocaleUpperCase() + strongerStarter[stage].slice(1));
     });
@@ -325,36 +298,17 @@ function fluctuatingGrowth(lvl) {
 }
 
 function gainExp(opponentYield, userLvl, opponentLvl) {
-    // return Math.floor(a * ((b / c) ** 2.5)) + 1;
-    // return Math.floor((((1.5 * opponentYield * opponentLvl) / 5) * (((2 * opponentLvl) + 10) / (opponentLvl + userLvl + 10)) ** 2.5) + 1)
-    // let A = (opponentLvl * 2) + 10;
-    // let B = (opponentYield * opponentLvl / 5) * 1.5
-    // let C = (opponentLvl + userLvl + 10);
-    // let result = Math.floor(Math.floor(Math.sqrt(A) * (A * A)) * B/Math.floor(Math.sqrt(C) * (C * C))) + 1;
-    // return result;
     let X = opponentLvl + opponentLvl + 10;
     let Y = opponentLvl + userLvl + 10;
     let Z = Math.floor(Math.floor(opponentYield * opponentLvl / 5) * 1.5);
-
     return Math.floor((Number((Math.sqrt(X).toFixed(4)))*(X*X))*Z/(Number((Math.sqrt(Y)).toFixed(4))*(Y*Y))+1);
-    // return Number(Math.sqrt(X)) * (X * X) * Z / (Number(Math.sqrt(Y)) * (Y * Y)) + 1;
 }
 
-// let test = document.querySelector('input[data-action]').nextElementSibling.nextElementSibling.querySelector('input');
-// console.log(test);
+
 function debug(pokemon, userLvl, opponentLvl) {
-    // return Math.floor(a * ((b / c) ** 2.5)) + 1;
-    // return Math.floor((((1.5 * opponentYield * opponentLvl) / 5) * (((2 * opponentLvl) + 10) / (opponentLvl + userLvl + 10)) ** 2.5) + 1)
-    // let A = (opponentLvl * 2) + 10;
-    // let B = (opponentYield * opponentLvl / 5) * 1.5
-    // let C = (opponentLvl + userLvl + 10);
-    // let result = Math.floor(Math.floor(Math.sqrt(A) * (A * A)) * B/Math.floor(Math.sqrt(C) * (C * C))) + 1;
-    // return result;
     let X = opponentLvl + opponentLvl + 10;
     let Y = opponentLvl + userLvl + 10;
     let Z = Math.floor(Math.floor(data[pokemon]['expYield'] * opponentLvl / 5) * 1.5);
 
     return Math.floor((Number((Math.sqrt(X).toFixed(4)))*(X*X))*Z/(Number((Math.sqrt(Y)).toFixed(4))*(Y*Y))+1)
-    // return Number(Math.sqrt(X)) * (X * X) * Z / (Number(Math.sqrt(Y)) * (Y * Y)) + 1;
 }
-
