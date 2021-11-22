@@ -133,6 +133,10 @@ form {
             }
         }
 
+        .pokemon {
+            display: inline-block;
+        }
+
         @media only screen and (max-width: 971px) {
             .pokemon {
                 display: grid;
